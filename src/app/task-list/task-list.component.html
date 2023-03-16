@@ -1,0 +1,29 @@
+<div class="container">
+  <h1>To Do</h1>
+  <div id="list">
+    <ul>
+      <mat-card *ngFor="let task of tasks">
+        <mat-card-header>
+          <mat-card-title>{{ task.title }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ task.description }}</p>
+        </mat-card-content>
+        <mat-card-footer>
+          <p>Created: {{ task.created | date }}</p>
+        </mat-card-footer>
+        <mat-card-actions>
+          <button mat-icon-button id="edit">
+            <mat-icon> edit </mat-icon>
+          </button>
+          <button mat-icon-button id="delete">
+            <mat-icon> delete </mat-icon>
+          </button>
+          <button mat-icon-button id="done">
+            <mat-icon>done</mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </ul>
+  </div>
+</div>
