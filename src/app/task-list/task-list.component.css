@@ -23,7 +23,7 @@ ul {
 
 mat-card {
   margin-bottom: 15px;
-  background-color: #C5CBD3;
+  background-color: #d3dce7;
   padding: 10px;
   border-radius: 15px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
@@ -37,6 +37,8 @@ mat-card-title {
 mat-card-content {
   font-size: 1.2rem;
   font-weight: 300;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 mat-card-footer {
@@ -53,10 +55,11 @@ mat-card-actions {
 mat-card-actions > button {
   margin-left: 10px;
   margin-right: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
 
 #delete{
-    background-color: #e91e63;
+    background-color: #e91e1e;
 }
 
 #delete:hover{

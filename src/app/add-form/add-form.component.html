@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>Add Task</h1>
+    <form #addForm="ngForm" (ngSubmit)="onAddTask(addForm.value)">
+      <label>Title</label>
+      <input type="text" placeholder="do..." name="title" ngModel />
+
+      <label>Description</label>
+      <input type="text" placeholder="steps..." name="description" ngModel />
+      <div id="buttons">
+        <button mat-button (click)="onCancel()">Cancel</button>
+        <button type="submit" mat-button>Add Task</button>
+      </div>
+    </form>
+  
+</div>
