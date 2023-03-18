@@ -1,13 +1,17 @@
-<div class="container">
-  <h1>Edit Task</h1>
-  <form #editForm="ngForm" (ngSubmit)="onEditTask()">
-    <label>Title</label>
-    <input type="text" name="title" ngModel />
-    <label>Description</label>
-    <input type="text"  name="description" ngModel />
-    <div id="buttons">
-      <button mat-button (click)="onCancel()">Cancel</button>
-      <button type="submit" mat-button>Confirm</button>
-    </div>
-  </form>
+<div id="out">
+    <div class="container">
+        <h1>Edit Task</h1>
+        <form #editForm="ngForm" (ngSubmit)="onEditTask()">
+          <label>Title</label>
+          <input type="text" name="title" ngModel />
+          <label>Description</label>
+          <input type="text"  name="description" ngModel />
+          <div id="buttons">
+            <button mat-button (click)="onCancel()">Cancel</button>
+            <button type="submit" mat-button>Confirm</button>
+          </div>
+        </form>
+      </div>
+      
 </div>
+

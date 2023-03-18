@@ -1,7 +1,7 @@
 .container {
   margin: auto;
   max-width: 800px;
-  background-color: #d3dce7;
+  background-color: #ffaeae;
   padding: 10px;
   border-radius: 15px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
@@ -54,4 +54,7 @@ label {
 #buttons > button:hover {
   background-color: #d32f2f;
   cursor: pointer;
+}
+#out{
+  margin:20px;
 }
