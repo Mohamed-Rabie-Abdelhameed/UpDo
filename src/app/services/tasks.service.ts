@@ -55,10 +55,10 @@ export class TasksService {
     ).subscribe();
   }
 
-  markDone(id: string) {
+  toggleDone(id: string, done: boolean) {
     return this.http.patch(
       'https://updo-59775-default-rtdb.firebaseio.com/tasks/' + id + '.json',
-      { done: true }
+      { done: done }
     );
   }
 

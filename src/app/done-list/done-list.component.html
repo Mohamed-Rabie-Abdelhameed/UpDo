@@ -16,6 +16,9 @@
           <button (click)="onDeleteTask(task.id)" mat-icon-button id="delete">
             <mat-icon> delete </mat-icon>
           </button>
+          <button (click)="onMarkUnDone(task.id)" mat-icon-button id="undo">
+            <mat-icon> undo </mat-icon>
+          </button>
         </mat-card-actions>
       </mat-card>
     </ul>

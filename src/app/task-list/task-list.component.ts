@@ -25,7 +25,7 @@ export class TaskListComponent implements OnInit {
     });
   }
   onMarkDone(id: string) {
-    this.api.markDone(id).subscribe(() => {
+    this.api.toggleDone(id, true).subscribe(() => {
       this.fetchTasks();
       location.reload();
     });

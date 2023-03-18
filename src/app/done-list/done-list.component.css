@@ -68,19 +68,11 @@
       background-color: #c2185b;
   }
   
-  #edit{
+  #undo{
       background-color: #21b1f3;
   }
   
-  #edit:hover{
+  #undo:hover{
       background-color: #1e88e5;
-  }
-  
-  #done{
-      background-color: #4caf50;
-  }
-  
-  #done:hover{
-      background-color: #43a047;
   }
   

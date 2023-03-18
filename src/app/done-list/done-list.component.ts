@@ -4,14 +4,14 @@ import { TasksService } from '../services/tasks.service';
 @Component({
   selector: 'app-done-list',
   templateUrl: './done-list.component.html',
-  styleUrls: ['./done-list.component.css']
+  styleUrls: ['./done-list.component.css'],
 })
-export class DoneListComponent implements OnInit{
+export class DoneListComponent implements OnInit {
   constructor(private api: TasksService) {}
   ngOnInit(): void {
     this.fetchTasks();
   }
-  tasks : Task[] = [];
+  tasks: Task[] = [];
   fetchTasks() {
     this.api.getTasks().subscribe((tasks) => {
       this.tasks = tasks;
@@ -20,6 +20,12 @@ export class DoneListComponent implements OnInit{
   onDeleteTask(id: string) {
     this.api.deleteTask(id).subscribe(() => {
       this.fetchTasks();
+    });
+  }
+  onMarkUnDone(id: string) {
+    this.api.toggleDone(id, false).subscribe(() => {
+      this.fetchTasks();
+      location.reload();
     });
   }
 }
