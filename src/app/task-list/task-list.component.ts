@@ -1,18 +1,36 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Task } from '../models/task.model';
+import { TasksService } from '../services/tasks.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-task-list',
   templateUrl: './task-list.component.html',
-  styleUrls: ['./task-list.component.css']
+  styleUrls: ['./task-list.component.css'],
 })
-export class TaskListComponent {
-
-  tasks: Task[] = [
-    { id: 1, title: 'Task 1', description: 'Description 1 loresm fsdkfjshfjlskfhs fsfskfhs fsdfsf sf sdfsdfsdf sdfsdfs', done: false , created: new Date()},
-    { id: 2, title: 'Task 2', description: 'Description 2', done: false , created: new Date()},
-    { id: 3, title: 'Task 3', description: 'Description 3', done: false , created: new Date()},
-    { id: 4, title: 'Task 4', description: 'Description 4', done: false , created: new Date()},
-  ]
-
+export class TaskListComponent implements OnInit {
+  constructor(private api: TasksService, private router:Router) {}
+  ngOnInit(): void {
+    this.fetchTasks();
+  }
+  tasks: Task[] = [];
+  fetchTasks() {
+    this.api.getTasks().subscribe((tasks) => {
+      this.tasks = tasks;
+    });
+  }
+  onDeleteTask(id: string) {
+    this.api.deleteTask(id).subscribe(() => {
+      this.fetchTasks();
+    });
+  }
+  onMarkDone(id: string) {
+    this.api.markDone(id).subscribe(() => {
+      this.fetchTasks();
+      location.reload();
+    });
+  }
+  onEditTask(id: string) {
+    this.router.navigate(['/edit', id]);
+  }
 }

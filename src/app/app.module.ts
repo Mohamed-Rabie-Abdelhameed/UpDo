@@ -18,12 +18,17 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ErrorComponent } from './error/error.component';
+import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
+import { DoneListComponent } from './done-list/done-list.component';
+import { EditFormComponent } from './edit-form/edit-form.component';
+
 
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {path:'home', component: HomeComponent},
   { path: 'add', component: AddFormComponent },
+  { path: 'edit/:id', component: EditFormComponent },
   { path: '**', component: ErrorComponent }
 ];
 
@@ -35,6 +40,8 @@ const routes: Routes = [
     AddFormComponent,
     HomeComponent,
     ErrorComponent,
+    DoneListComponent,
+    EditFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,6 +56,7 @@ const routes: Routes = [
     MatFormFieldModule,
     FormsModule,
     RouterModule,
+    MatSnackBarModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],

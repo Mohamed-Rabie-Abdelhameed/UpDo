@@ -1,8 +1,8 @@
 <div class="container">
-  <h1>To Do</h1>
+  <h1>Done</h1>
   <div id="list">
     <ul *ngFor="let task of tasks">
-      <mat-card *ngIf="!task.done">
+      <mat-card *ngIf="task.done">
         <mat-card-header>
           <mat-card-title>{{ task.title }}</mat-card-title>
         </mat-card-header>
@@ -13,14 +13,8 @@
           <p>Created: {{ task.created | date }}</p>
         </mat-card-footer>
         <mat-card-actions>
-          <button mat-icon-button id="edit" (click)="onEditTask(task.id)">
-            <mat-icon> edit </mat-icon>
-          </button>
-          <button mat-icon-button id="delete" (click)="onDeleteTask(task.id)">
+          <button (click)="onDeleteTask(task.id)" mat-icon-button id="delete">
             <mat-icon> delete </mat-icon>
-          </button>
-          <button mat-icon-button (click)="onMarkDone(task.id)" id="done">
-            <mat-icon>done</mat-icon>
           </button>
         </mat-card-actions>
       </mat-card>
